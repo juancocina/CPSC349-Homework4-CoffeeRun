@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Run</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        form :focus:required:invalid {
+            border-color: #a94442;
+        }
+    </style>
+</head>
+<body class="container">
+    <header>
+        <h1>CoffeeRun</h1>
+    </header>
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form data-coffee-order="form">
+                    <div class="form-group">
+                        <label for="coffeeOrder">Coffee Order</label>
+                    <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-z\s]+">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <input class="form-control" type="email" name="emailAddress"
+                            id="emailInput" value="" placeholder="dr@who.com" required>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="short">
+                            Short
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="tall" checked>
+                            Tall
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="grande">
+                            Grande
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="flavorShot">Flavor Shot</label>
+                        <select id="flavorShot" class="form-control" name="flavor">
+                            <option value="" selected>None</option>
+                            <option value="caramel">Caramel</option>
+                            <option value="almond">Almond</option>
+                            <option value="mocha">Mocha</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="strengthLevel">Caffeine Rating</label>
+                        <input name="strength" id="strengthLevel" type="range" value="30">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h4>Pending Orders:</h4>
+                <div data-coffee-order="checklist">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts under this -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+    <script src="scripts/validation.js" charset="utf-8"></script>
+    <script src="scripts/checklist.js" charset="utf-8"></script>
+    <script src="scripts/formhandler.js" charset="UTF-8"></script>
+    <srcipt src="scripts/remotedatastore.js" charset="utf-8"></srcipt>
+    <script src="scripts/datastore.js" charset="UTF-8"></script>
+    <script src="scripts/trucks.js" charset="UTF-8"></script>
+    <script src="scripts/main.js" charset="UTF-8"></script>
+    <!-- end of scripts -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDsGd9cPPbdr6dLUbUvMAIkK4_Byg9BlHk",
+            authDomain: "coffeerun-3e2c3.firebaseapp.com",
+            projectId: "coffeerun-3e2c3",
+            storageBucket: "coffeerun-3e2c3.appspot.com",
+            messagingSenderId: "685769739721",
+            appId: "1:685769739721:web:86f9a016a64681abc82c18",
+            measurementId: "G-PE0N6HDM6E"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</body>
+</html>

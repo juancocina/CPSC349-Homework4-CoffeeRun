@@ -1,0 +1,17 @@
+{
+  "name": "coffeerun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^7.21.0",
+    "firebase": "^8.3.2",
+    "jshint": "^2.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
